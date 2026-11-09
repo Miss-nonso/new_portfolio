@@ -1,0 +1,25 @@
+/* Keep the hero's two messages in distinct reading zones on wide screens. */
+@media (min-width: 1101px) {
+  .fusion-hero .mastery-statement {
+    top: clamp(9.5rem, 18vh, 13.5rem) !important;
+    bottom: auto !important;
+    left: max(6vw, clamp(1.5rem, 5vw, 6rem)) !important;
+    width: min(58vw, 58rem) !important;
+    max-width: none !important;
+    transform: none !important;
+  }
+
+  .fusion-hero .mastery-statement h1 {
+    font-size: clamp(4.75rem, 5.2vw, 6rem) !important;
+    line-height: .84 !important;
+  }
+
+  .fusion-hero .hero-foot {
+    bottom: clamp(2rem, 5vh, 4rem) !important;
+    padding-top: 1.35rem !important;
+  }
+
+  .fusion-hero .hero-foot p {
+    max-width: 34rem !important;
+  }
+}

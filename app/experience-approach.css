@@ -1,0 +1,42 @@
+/* A career trail: tap a stop to reveal the work, judgement, and change it created. */
+.mastery-proof .proof-title { max-width: 52rem; }
+.journey-intro { max-width: 48rem; margin: 2.5rem 0 3rem; font-size: clamp(1.1rem, 1.7vw, 1.55rem); line-height: 1.38; }
+.career-journey { position: relative; display: grid; grid-template-columns: minmax(12rem, .55fr) minmax(0, 1.45fr); gap: clamp(1.5rem, 5vw, 5rem); align-items: stretch; }
+.journey-stops { position: relative; display: grid; align-content: start; gap: .35rem; padding: .65rem 0; }
+.journey-stops::before { content: ""; position: absolute; z-index: 0; left: .72rem; top: 1.2rem; bottom: 1.2rem; width: 1px; background: color-mix(in srgb, currentColor 45%, transparent); }
+.journey-stops button { position: relative; z-index: 1; display: grid; grid-template-columns: 1.5rem 2.7rem 1fr; grid-template-rows: auto auto; align-items: center; column-gap: .55rem; width: 100%; padding: .7rem 0; border: 0; background: transparent; color: inherit; text-align: left; opacity: .55; transition: opacity .25s, transform .25s; }
+.journey-stops button:hover, .journey-stops button:focus-visible, .journey-stops button.is-active { opacity: 1; transform: translateX(.35rem); outline: 0; }
+.journey-stops button i { grid-row: 1 / -1; width: .68rem; height: .68rem; border: 2px solid currentColor; border-radius: 50%; background: #7b9e8d; transition: background .25s, transform .25s, box-shadow .25s; }
+.journey-stops button.is-active i { background: #e7a95c; transform: scale(1.28); box-shadow: 0 0 0 .38rem #e7a95c35; }
+.journey-stops button > span { grid-row: 1 / -1; font: 9px var(--font-plex), monospace; letter-spacing: .1em; }
+.journey-stops strong, .journey-stops small { font: 8px var(--font-plex), monospace; letter-spacing: .08em; line-height: 1.2; }
+.journey-stops small { opacity: .72; }
+.journey-stops em { grid-column: 3; font: 7px var(--font-plex), monospace; letter-spacing: .1em; font-style: normal; opacity: 0; transform: translateY(-.25rem); transition: opacity .25s, transform .25s; }
+.journey-stops button:hover em, .journey-stops button:focus-visible em, .journey-stops button.is-active em { opacity: .78; transform: none; }
+.journey-placeholder { position: relative; display: grid; place-content: center; min-height: 26rem; overflow: hidden; border: 1px dashed color-mix(in srgb, currentColor 45%, transparent); border-radius: 1.1rem; text-align: center; background: radial-gradient(circle at 50% 50%, #e7a95c2b, transparent 8%, transparent 44%), linear-gradient(145deg, #fff1, transparent); animation: dream-breathe 5s ease-in-out infinite; }
+.journey-placeholder::before, .journey-placeholder::after { content: ""; position: absolute; left: 50%; top: 50%; border: 1px solid currentColor; border-radius: 50%; opacity: .17; transform: translate(-50%, -50%); animation: dream-ripple 5.4s ease-out infinite; }
+.journey-placeholder::before { width: 9rem; aspect-ratio: 1; }.journey-placeholder::after { width: 17rem; aspect-ratio: 1; animation-delay: -2.7s; }
+.journey-placeholder span { position: relative; z-index: 1; font: 8px var(--font-plex), monospace; letter-spacing: .16em; }.journey-placeholder p { position: relative; z-index: 1; margin-top: .65rem; font: 500 clamp(1.7rem, 3vw, 3.2rem) var(--font-lora), Georgia, serif; letter-spacing: -.06em; }
+.journey-story { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(5rem, .28fr) minmax(0, 1fr); gap: clamp(1.1rem, 3vw, 3rem); min-height: 26rem; padding: clamp(1.4rem, 3.2vw, 3rem); border: 1px solid color-mix(in srgb, currentColor 35%, transparent); border-radius: 1.1rem; background: linear-gradient(135deg, #fff2 0%, transparent 58%), color-mix(in srgb, #233d35 15%, transparent); box-shadow: 1rem 1rem 0 #18251f1c; }
+.journey-story { animation: chapter-arrive .82s cubic-bezier(.16, 1, .3, 1) both; }
+.journey-story::after { content: ""; position: absolute; width: 18rem; aspect-ratio: 1; right: -7rem; bottom: -9rem; border: 1px solid currentColor; border-radius: 50%; opacity: .22; box-shadow: 0 0 0 2rem #fff1, 0 0 0 4rem #fff1; pointer-events: none; }
+.journey-story-index { font: 500 clamp(4.5rem, 9vw, 9rem) var(--font-lora), Georgia, serif; letter-spacing: -.12em; line-height: .72; color: #a8503b; }
+.journey-story > div:last-child { position: relative; z-index: 1; max-width: 43rem; }
+.journey-story > div:last-child > span, .operating-principles > span { font: 8px var(--font-plex), monospace; letter-spacing: .12em; }
+.journey-story-topline { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }.journey-story-topline button { border: 0; background: transparent; color: inherit; opacity: .68; font: 8px var(--font-plex), monospace; letter-spacing: .08em; text-decoration: underline; text-underline-offset: .3rem; }.journey-story-topline button:hover { opacity: 1; }
+.journey-story h3 { max-width: 12ch; margin: 1.3rem 0 1rem; font: 500 clamp(2rem, 3.5vw, 3.65rem) var(--font-lora), Georgia, serif; letter-spacing: -.065em; line-height: .9; }
+.journey-story p { max-width: 38rem; font-size: clamp(.92rem, 1.15vw, 1.08rem); line-height: 1.52; }
+.journey-outcome { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid color-mix(in srgb, currentColor 32%, transparent); }
+.journey-outcome b { font: 8px var(--font-plex), monospace; letter-spacing: .09em; }
+.journey-tags { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: 1.5rem; }
+.journey-tags span { border: 1px solid color-mix(in srgb, currentColor 35%, transparent); border-radius: 999px; padding: .42rem .55rem; font: 8px var(--font-plex), monospace; letter-spacing: .06em; }
+.operating-principles { display: grid; grid-template-columns: minmax(11rem, .45fr) minmax(0, 1.55fr); gap: 1rem 2rem; margin-top: clamp(3rem, 7vw, 6rem); padding-top: 1.2rem; border-top: 1px solid color-mix(in srgb, currentColor 38%, transparent); }
+.operating-principles ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem 1.5rem; padding: 0 !important; margin: 0 !important; border: 0 !important; list-style: none; }
+.operating-principles li { padding: 0 !important; border: 0 !important; font-size: .9rem; line-height: 1.35; }
+.operating-principles li::before { content: "↳"; display: inline-block; margin-right: .45rem; }
+@keyframes chapter-arrive { from { opacity: 0; clip-path: inset(0 100% 0 0 round 1rem); transform: translateY(1.5rem) scale(.97); filter: blur(8px); } to { opacity: 1; clip-path: inset(0 0 0 0 round 1rem); transform: none; filter: none; } }
+@keyframes dream-breathe { 50% { background-position: 0 0, 0 0; box-shadow: 0 0 4rem #e7a95c26; } }
+@keyframes dream-ripple { 0%, 100% { opacity: .05; transform: translate(-50%, -50%) scale(.75); } 50% { opacity: .28; transform: translate(-50%, -50%) scale(1.1); } }
+@media (max-width: 860px) { .career-journey { grid-template-columns: 1fr; gap: 1.5rem; } .journey-stops { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .4rem; } .journey-stops::before { left: 8%; right: 8%; top: 1rem; bottom: auto; width: auto; height: 1px; } .journey-stops button { display: flex; flex-direction: column; align-items: flex-start; gap: .35rem; padding-top: .55rem; } .journey-stops button i { width: .72rem; height: .72rem; } .journey-stops button > span { display: none; } .journey-stops strong, .journey-stops small { font-size: 7px; } }
+@media (max-width: 680px) { .journey-intro { margin: 1.5rem 0 2rem; } .journey-stops { overflow-x: auto; grid-template-columns: repeat(4, minmax(7.25rem, 1fr)); padding-bottom: .4rem; } .journey-stops em { display: none; } .journey-placeholder { min-height: 18rem; } .journey-story { grid-template-columns: 1fr; min-height: auto; } .journey-story-index { position: absolute; right: 2rem; top: 2.4rem; opacity: .32; } .journey-story h3 { font-size: 2.35rem; } .journey-outcome { grid-template-columns: 1fr; gap: .45rem; } .operating-principles { grid-template-columns: 1fr; margin-top: 3rem; } .operating-principles ul { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .journey-placeholder, .journey-placeholder::before, .journey-placeholder::after, .journey-story { animation: none; } }

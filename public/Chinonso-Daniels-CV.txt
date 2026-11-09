@@ -1,0 +1,55 @@
+CHINONSO DANIELS
+Software Engineer
+Lagos, Nigeria
+chinonsodaniels2020@gmail.com
+https://github.com/Miss-nonso
+https://linkedin.com/in/nonso-daniels
+https://pre-portfolio-ten.vercel.app/
+
+PROFESSIONAL SUMMARY
+Software Engineer building production-grade, enterprise web applications across the full stack, from IoT monitoring dashboards to multi-tenant SaaS platforms. Specializes in React, TypeScript, and Next.js, with backend experience in Python (FastAPI) and Node.js. Builds accessible, high-performance interfaces, maintainable architectures, and scalable production systems from product requirements and Figma designs. Collaborates with backend, IoT, analytics, and product teams. Uses AI-assisted development to increase engineering velocity without compromising code quality.
+
+PROFESSIONAL EXPERIENCE
+
+Software Engineer — Powerlabs (Powerstart Integrated Technologies Limited)
+September 2025 – Present | Lagos, Nigeria
+- Led the Energy Trading module, including buyer management, billing/invoicing flows, and operator overview. Authored backend integration architecture across PostgreSQL and analytics services.
+- Built and shipped Sentinel, an internal production fleet-monitoring dashboard for energy systems with real-time metrics and Recharts visualizations; recognized internally for clarity and design quality.
+- Extended and developed the Admin Dashboard platform, including enterprise/location models, asset registry, and migrations for multi-tenant operations.
+- Delivered Customer Support in Pai Enterprise across UI, API integration, and role-based access.
+- Developed full-stack features with React, TypeScript, and FastAPI. Implemented Firebase authentication and optimized the TigerCloud DB data layer, cutting load times by 98.61% after evaluating AWS S3 and InfluxDB.
+- Built accessible shadcn/ui interfaces with WCAG, keyboard navigation, and screen-reader support. Worked with hardware/IoT teams to turn sensor data into actionable operator insights.
+- Used AI-assisted workflows for design-to-code, architecture documentation, and iterative UI delivery.
+
+Frontend Developer — Yourekaa (Founding Team Member)
+Remote
+- Architected responsive interfaces using Next.js and Tailwind CSS, driving a 40% increase in user engagement and retention.
+- Built custom React hooks and a component library that reduced feature development time by 30%.
+- Optimized landing-page CTAs and competition registration, achieving a Lighthouse performance score of 92 and reducing initial page load time by 25% through asset optimization, deferred scripts, and improved LCP and INP metrics.
+- Collaborated with a three-person design team and backend engineers in agile sprints.
+
+Frontend Developer — Myllash Web Services
+Contract
+- Delivered corporate and service websites, reducing average delivery time by 15% through template customization and component reuse.
+- Customized and extended premium templates for client requirements.
+- Improved client conversion rates by an average of 25% through responsive landing pages.
+- Integrated RESTful APIs for dynamic content.
+- Refactored legacy JavaScript using modern ES7 patterns and React practices, reducing page load time by 10% and technical debt by 40%.
+
+Frontend Developer Intern — FlexiSAF
+Remote
+- Developed accessible React and Tailwind CSS components adhering to WCAG standards.
+- Implemented secure multi-step forms using React Hook Form and Yup validation.
+- Created technical demo videos explaining component architecture and integration patterns.
+
+TECHNICAL SKILLS
+Frontend: TypeScript, JavaScript (ES6+), React, Next.js, HTML/CSS, Tailwind CSS, Bootstrap, MobX, Recharts, Chart.js.
+Backend and data: FastAPI, Python, Node.js, REST APIs, Firebase Auth, MongoDB, PostgreSQL.
+Practices: Responsive and accessible UI (WCAG), performance optimization, component architecture, Figma-to-code, technical architecture and documentation, Git, Agile, AI-assisted development.
+
+EDUCATION AND CERTIFICATIONS
+BSc(ED) in Computer Science — Lagos State University
+Frontend Web Development — Udemy
+Frontend Engineering Certificate — AltSchool Africa
+Frontend Development Program — Africa Agility
+Soft skills — LinkedIn Learning
