@@ -14,6 +14,7 @@ import "./doodle-arrow.css";
 import "./hero-copy-layout.css";
 import "./game-layout.css";
 import "./experience-approach.css";
+import "./copy-upgrade.css";
 
 export const metadata: Metadata = {
   title: {

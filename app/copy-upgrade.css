@@ -1,0 +1,147 @@
+/* Keep the harder copy legible and give the final invitation a proper pause. */
+.mastery-contact h2 em {
+  font-family: var(--font-lora), Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.mastery-contact .contact-intent {
+  max-width: 32rem;
+  margin: 0 0 2rem;
+  font-size: clamp(1rem, 1.35vw, 1.25rem);
+  line-height: 1.4;
+}
+
+.capability-cta,
+.work-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  margin-top: 1.5rem;
+  padding: .7rem 0;
+  border-bottom: 1px solid currentColor;
+  font: 9px var(--font-plex), monospace;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  transition: gap .25s ease, opacity .25s ease;
+}
+
+.capability-cta:hover,
+.work-cta:hover { gap: 1.15rem; opacity: .8; }
+.capability-cta span { font-size: 1.15rem; line-height: .7; }
+.work-cta { margin-top: 2.25rem; }
+
+.mastery-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: clamp(3.5rem, 8vw, 7rem);
+  padding-top: 1.25rem;
+  border-top: 1px solid currentColor;
+  font: 8px var(--font-plex), monospace;
+  letter-spacing: .1em;
+}
+
+.mastery-footer a { text-decoration: underline; text-underline-offset: .3rem; white-space: nowrap; }
+
+.fusion-hero .hero-foot .hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.25rem;
+  margin: 0;
+}
+
+.fusion-hero .hero-foot .hero-actions .hero-email-link {
+  text-decoration: underline;
+  text-underline-offset: .35rem;
+}
+
+.fusion-hero .hero-foot .hero-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  max-width: none;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.fusion-hero .hero-foot .hero-actions .hero-contact-link {
+  padding: .7rem .85rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+
+.fusion-hero .hero-foot .hero-actions .hero-contact-link .doodle-arrow {
+  width: 1rem !important;
+  margin-left: .15rem !important;
+}
+
+.dream-outcome > span {
+  display: grid;
+  gap: .25rem;
+  min-width: 0;
+}
+
+.dream-outcome {
+  display: grid !important;
+  grid-template-columns: minmax(7.4rem, .38fr) minmax(0, 1fr) !important;
+  align-items: start;
+  text-align: left !important;
+  direction: ltr !important;
+}
+
+.dream-outcome > b {
+  justify-self: start;
+  align-self: start;
+  min-width: 0;
+  text-align: left;
+}
+
+.dream-outcome strong {
+  color: #a8503b;
+  font: 700 clamp(.78rem, 1.1vw, .95rem) var(--font-plex), monospace;
+  letter-spacing: .06em;
+}
+
+.mastery-footer {
+  display: grid;
+  grid-template-columns: auto minmax(14rem, 1fr) auto;
+  align-items: start;
+  column-gap: 1.5rem;
+  row-gap: 1rem;
+}
+
+.mastery-footer-mark {
+  grid-row: span 2;
+  font: 600 clamp(1.8rem, 3vw, 2.8rem) var(--font-instrument), sans-serif;
+  letter-spacing: -.1em;
+  text-decoration: none !important;
+}
+
+.mastery-footer p {
+  max-width: 25rem;
+  margin: 0;
+  font: 500 clamp(1rem, 1.5vw, 1.3rem) var(--font-lora), Georgia, serif;
+  letter-spacing: -.03em;
+  line-height: 1.05;
+}
+
+.mastery-footer > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: .8rem 1.2rem;
+}
+
+.mastery-footer small { grid-column: 2 / -1; opacity: .7; font-size: 7px; }
+
+@media (max-width: 760px) {
+  .mastery-contact .contact-intent { max-width: 19rem; font-size: .95rem; }
+  .fusion-hero .hero-foot .hero-actions { align-items: flex-end; flex-direction: column; gap: .65rem; }
+  .fusion-hero .hero-foot .hero-actions a { font-size: 8px; }
+  .dream-outcome { grid-template-columns: 1fr !important; gap: .45rem !important; }
+  .mastery-footer { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.45; }
+  .mastery-footer > div { justify-content: flex-start; }
+  .mastery-footer small { font-size: 7px; }
+}

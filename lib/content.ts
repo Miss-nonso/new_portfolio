@@ -8,7 +8,8 @@ export const profile = {
   email: "chinonsodaniels2020@gmail.com",
   location: "Lagos",
   availability: "Available",
-  replyHint: "Based in Lagos · Open to remote · Typically replies within 24 hours",
+  replyHint:
+    "Based in Lagos · Open to remote · Typically replies within 24 hours",
   links: {
     github: "https://github.com/Miss-nonso",
     linkedin: "https://linkedin.com/in/nonso-daniels",
@@ -21,12 +22,15 @@ export const profile = {
     lede: "I'm Chinonso Daniels — a software engineer building production systems across the full stack. From IoT monitoring dashboards to multi-tenant SaaS, I turn Figma files, product requirements, and hardware signals into interfaces people trust with the work that matters.",
     primaryCta: { label: "See selected work", href: "#work" },
     secondaryCta: { label: "Download resume", href: "#" },
-    tertiaryCta: { label: "chinonsodaniels2020@gmail.com", href: "mailto:chinonsodaniels2020@gmail.com" },
+    tertiaryCta: {
+      label: "chinonsodaniels2020@gmail.com",
+      href: "mailto:chinonsodaniels2020@gmail.com",
+    },
   },
   trust: [
     "4+ years shipping to production",
     "Fullstack · React / TypeScript / FastAPI",
-    "IoT · SaaS · Fintech",
+    "IoT · SaaS · Enterprise",
     "AI-augmented delivery",
     "Figma → production systems",
   ],
@@ -90,7 +94,7 @@ export const evidence: EvidenceStat[] = [
     numeric: 15,
     suffix: "+",
     label: "Production applications shipped",
-    detail: "SaaS, fintech, and real-time products",
+    detail: "SaaS, and real-time products",
   },
   {
     value: "40%",
@@ -130,29 +134,46 @@ export const work = [
   {
     id: "01",
     category: "IoT · Real-time dashboards",
-    title: "Turned a wall of sensor data into a control room operators actually trust.",
+    title:
+      "Turned a wall of sensor data into a control room operators actually trust.",
     summary:
       "Built real-time monitoring dashboards for distributed energy systems — live telemetry, clear charts, and a UX stakeholders could present without translation.",
     role: "Software Engineer · Powerlabs",
     impact: "98.61% faster data load after DB re-architecture",
-    stack: ["React", "TypeScript", "FastAPI", "TigerCloud DB", "Recharts", "Firebase Auth"],
+    stack: [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "TigerCloud DB",
+      "Recharts",
+      "Firebase Auth",
+    ],
     caseStudyReady: false,
   },
   {
     id: "02",
     category: "Multi-tenant SaaS · Enterprise",
-    title: "Led the Energy Trading module and authored the architecture powering multi-tenant operations.",
+    title:
+      "Led the Energy Trading module and authored the architecture powering multi-tenant operations.",
     summary:
       "Owned Energy Trading inside Pai Enterprise — buyer management, invoicing flows, operator overview, and admin surfaces aligned to backend models across MongoDB, PostgreSQL, and analytics services.",
     role: "Software Engineer · Powerlabs",
     impact: "Full-stack ownership across UI, API, RBAC & data design",
-    stack: ["React", "TypeScript", "FastAPI", "MongoDB", "PostgreSQL", "shadcn/ui"],
+    stack: [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "MongoDB",
+      "PostgreSQL",
+      "shadcn/ui",
+    ],
     caseStudyReady: false,
   },
   {
     id: "03",
     category: "Creative product · Founding team",
-    title: "Founding-team frontend for a creatives platform, tuned for speed and engagement.",
+    title:
+      "Founding-team frontend for a creatives platform, tuned for speed and engagement.",
     summary:
       "Architected the Next.js app and reusable component library on Yourekaa — faster feature cycles, consistent UI, and a product that stayed fast under growth.",
     role: "Frontend Developer · Founding Team",
@@ -163,7 +184,8 @@ export const work = [
   {
     id: "04",
     category: "Client delivery · Contract",
-    title: "Shipped client sites faster by treating templates as a system, not a shortcut.",
+    title:
+      "Shipped client sites faster by treating templates as a system, not a shortcut.",
     summary:
       "Delivered corporate and service sites by standardizing components instead of reinventing each page — clients launched sooner with less tech debt.",
     role: "Frontend Developer · Contract",
@@ -294,7 +316,7 @@ export const craft = {
   domains: [
     "IoT dashboards",
     "Multi-tenant SaaS",
-    "Fintech / trading",
+
     "Enterprise apps",
     "Growth-stage startups",
   ],
@@ -328,8 +350,7 @@ export const trajectory = [
   {
     period: "Next",
     role: "Software Engineer · Senior / Technical Lead",
-    detail:
-      "The trajectory this whole page is evidence for.",
+    detail: "The trajectory this whole page is evidence for.",
     future: true,
   },
 ] as const;

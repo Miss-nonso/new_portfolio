@@ -72,32 +72,44 @@ const careerJourney = [
     number: "01",
     period: "FOUNDATIONS / FLEXISAF",
     title: "Learning to make quality visible.",
-    summary: "Built accessible React components and secure multi-step flows, then explained the architecture in technical demos so implementation could travel beyond one person.",
-    outcome: "Accessibility, validation, and clear technical communication became non-negotiables.",
+    summary:
+      "Built accessible UI and validated multi-step flows so critical journeys stayed usable, reviewable, and easier to support.",
+    impact: "ACCESSIBLE BY DEFAULT",
+    outcome:
+      "Quality moved upstream: fewer exclusions, fewer avoidable form failures, clearer handoff.",
     tags: ["React", "WCAG", "React Hook Form", "Technical demos"],
   },
   {
     number: "02",
     period: "CLIENT DELIVERY / MYLLASH",
-    title: "Adapt to the job—not just the stack.",
-    summary: "Delivered across corporate and service sites, modernised legacy JavaScript, and stepped into PHP when a client project required it—even though it was outside my original toolkit.",
-    outcome: "Reduced average delivery time by 15% by learning what the job needed and turning that learning into reusable delivery patterns.",
+    title: "Adapt to the job, not just the stack.",
+    summary:
+      "Delivered client platforms under pressure, modernised legacy JavaScript, and learned PHP in flight when the scope demanded it.",
+    impact: "15% FASTER DELIVERY",
+    outcome:
+      "Reusable patterns made delivery faster without lowering the bar on what shipped.",
     tags: ["React", "PHP", "REST APIs", "Client delivery"],
   },
   {
     number: "03",
     period: "FOUNDING TEAM / YOUREKAA",
     title: "Own the frontend from question to release.",
-    summary: "Owned frontend decisions and development end to end: researching the user journey, translating product direction into a component system, building the experience, and carrying it through deployment.",
-    outcome: "Improved engagement and retention by 40%; lifted Lighthouse performance to 92 and reduced initial load time by 25% through focused performance work.",
+    summary:
+      "Owned the frontend from research to production: clarified journeys, shaped the UI architecture, shipped, measured, and improved.",
+    impact: "40% MORE ENGAGEMENT",
+    outcome:
+      "Lighthouse reached 92 and initial load fell 25%, giving the product more room to convert.",
     tags: ["Next.js", "Research", "UI architecture", "Deployment"],
   },
   {
     number: "04",
     period: "NOW / POWERLABS",
     title: "Make operational complexity workable.",
-    summary: "Lead frontend delivery across energy-trading flows, fleet monitoring, customer support, and multi-tenant administration—connecting backend, analytics, IoT, and product concerns into tools people can operate confidently.",
-    outcome: "Cut data-layer load time by 98.61% after evaluating the system path, while helping shape the architecture behind enterprise-scale workflows.",
+    summary:
+      "Delivered energy trading, fleet monitoring, support, and multi-tenant workflows where reliability shapes daily decisions.",
+    impact: "98.61% LESS WAITING",
+    outcome:
+      "Reduced data-layer load time and made operational insight faster to reach when it mattered.",
     tags: ["FastAPI", "PostgreSQL", "IoT", "Multi-tenant SaaS"],
   },
 ];
@@ -117,7 +129,6 @@ export function MasteryPortfolio() {
   const [open, setOpen] = useState(0);
   const [view, setView] = useState<"grid" | "orbit" | "carousel">("grid");
   const [carouselIndex, setCarouselIndex] = useState(0);
-  const [activeCareerStop, setActiveCareerStop] = useState<number | null>(null);
   useEffect(() => {
     const move = (event: PointerEvent) => {
       root.current?.style.setProperty("--mx", `${event.clientX}px`);
@@ -215,21 +226,31 @@ export function MasteryPortfolio() {
               I take complicated product requirements and turn them into
               software people can pick up, trust, and use.
             </p>
-            <a href="#work">
-              See selected work <span>↓</span>
-            </a>
+            <div className="hero-actions">
+              <a href="#work">
+                See selected work <span>↓</span>
+              </a>
+              <a
+                className="hero-email-link"
+                href="mailto:chinonsodaniels2020@gmail.com"
+              >
+                Email Chinonso <DoodleArrow />
+              </a>
+              <a className="hero-contact-link" href="#contact">
+                Start a conversation <DoodleArrow />
+              </a>
+            </div>
           </div>
         </section>
-        <PlaygroundGames />
         <SkillOrbit />
         <section className="mastery-work fusion-work" id="work">
           <div className="section-label">
-            SELECTED WORK / SYSTEMS, FLOWS, INTERFACES
+            SELECTED WORK / PROBLEMS MADE USEFUL
           </div>
           <h2>
-            Work made
+            Built to make
             <br />
-            <em>to be used.</em>
+            <em>work move.</em>
           </h2>
           <div className="work-viewbar" aria-label="Project gallery view">
             <span>VIEW</span>
@@ -317,82 +338,116 @@ export function MasteryPortfolio() {
               </button>
             </div>
           )}
+          <a className="work-cta" href="#contact">
+            Have a problem with stakes? Let’s talk. <DoodleArrow />
+          </a>
         </section>
         <section className="mastery-proof" id="proof">
           <div className="proof-title">
-            <span>03 / EXPERIENCE &amp; APPROACH</span>
+            <span>03 / WHAT I BUILD FOR</span>
             <h2>
-              Leave the system
+              Systems that
               <br />
-              stronger—and ready
+              stay useful
               <br />
-              <em>for what changes next.</em>
+              <em>after I leave.</em>
             </h2>
           </div>
           <p className="journey-intro">
-            I build systems clients can depend on—not one-off solutions that
-            need to be reshaped every time the work changes. Choose a chapter to
-            see how that point of view was earned.
+            A client should be able to change a rule, add a team, or make a
+            decision without reopening the whole product. I build for that kind
+            of independence.
           </p>
-          <div className={`career-journey ${activeCareerStop === null ? "is-sealed" : "is-open"}`} aria-label="Professional experience journey">
-            <div className="journey-stops" role="tablist" aria-label="Career stops">
-              {careerJourney.map((stop, index) => (
-                <button
-                  key={stop.number}
-                  type="button"
-                  role="tab"
-                  aria-selected={activeCareerStop === index}
-                  aria-controls="career-story"
-                  className={activeCareerStop === index ? "is-active" : ""}
-                  onClick={() => setActiveCareerStop(index)}
-                >
-                  <i aria-hidden="true" />
-                  <span>{stop.number}</span>
-                  <strong>{stop.period.split(" / ")[0]}</strong>
-                  <small>{stop.period.split(" / ")[1]}</small>
-                  <em>open chapter</em>
-                </button>
-              ))}
+          <div
+            className="career-dreamline"
+            aria-label="Professional experience journey"
+          >
+            <div className="dream-route" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+              <i />
+              <i />
+              <i />
+              <b>&lt;/&gt;</b>
+              <strong>01</strong>
+              <em>API</em>
             </div>
-            {activeCareerStop === null ? (
-              <div className="journey-placeholder" aria-live="polite">
-                <span>THE WORK IS IN THE DETAILS</span>
-                <p>Open any stop on the trail.</p>
-              </div>
-            ) : (
-              <article className="journey-story" id="career-story" role="tabpanel" key={careerJourney[activeCareerStop].number}>
-                <div className="journey-story-index" aria-hidden="true">{careerJourney[activeCareerStop].number}</div>
-                <div>
-                  <div className="journey-story-topline"><span>{careerJourney[activeCareerStop].period}</span><button type="button" onClick={() => setActiveCareerStop(null)}>close chapter ×</button></div>
-                  <h3>{careerJourney[activeCareerStop].title}</h3>
-                  <p>{careerJourney[activeCareerStop].summary}</p>
-                  <p className="journey-outcome"><b>What changed</b>{careerJourney[activeCareerStop].outcome}</p>
-                  <div className="journey-tags" aria-label="Tools and focus areas">
-                    {careerJourney[activeCareerStop].tags.map((tag) => <span key={tag}>{tag}</span>)}
+            {careerJourney.map((stop, index) => (
+              <article
+                className={`dream-stop dream-stop-${index + 1}`}
+                key={stop.number}
+              >
+                <div className="dream-stop-number" aria-hidden="true">
+                  {stop.number}
+                </div>
+                <div className="dream-stop-copy">
+                  <div className="company-lockup">
+                    <b>{stop.period.split(" / ")[1]}</b>
+                    <span>{stop.period.split(" / ")[0]}</span>
+                  </div>
+                  <h3>{stop.title}</h3>
+                  <p>{stop.summary}</p>
+                  <p className="dream-outcome">
+                    <b>BUSINESS IMPACT</b>
+                    <span>
+                      <strong>{stop.impact}</strong>
+                      {stop.outcome}
+                    </span>
+                  </p>
+                  <div
+                    className="journey-tags"
+                    aria-label="Tools and focus areas"
+                  >
+                    {stop.tags.map((tag) => (
+                      <span key={tag}>{tag}</span>
+                    ))}
+                  </div>
+                  <div className="dream-glyph" aria-hidden="true">
+                    <i />
+                    <i />
+                    <i />
+                    <b>
+                      {index === 0
+                        ? "a11y"
+                        : index === 1
+                          ? "php"
+                          : index === 2
+                            ? "ship"
+                            : "sync"}
+                    </b>
                   </div>
                 </div>
               </article>
-            )}
+            ))}
           </div>
           <div className="operating-principles">
-            <span>THE DECISIONS I KEEP</span>
+            <span>THE STANDARD</span>
             <ul>
-              <li>Start with the user, business, and operational consequence—not the framework.</li>
-              <li>Choose the simplest architecture that carries today’s constraints and leaves room for tomorrow.</li>
-              <li>Treat data shape, permissions, performance, and failure states as product work.</li>
-              <li>Write decisions down so design, product, and engineering can move with shared context.</li>
+              <li>Consequences before frameworks.</li>
+              <li>Simplicity that survives change.</li>
+              <li>
+                Permissions, failure, and performance are product decisions.
+              </li>
+              <li>Documentation is part of delivery.</li>
             </ul>
           </div>
         </section>
+        <PlaygroundGames />
         <section className="mastery-contact" id="contact">
-          <span>04 / START A CONVERSATION</span>
+          <span>04 / LET’S TALK</span>
           <h2>
-            Have a system
+            When it has
             <br />
-            worth improving?
+            to <em>ship,</em>
+            <br />
+            bring me in.
           </h2>
+          <p className="contact-intent">
+            Products need engineers who can think, decide, and deliver...
+          </p>
           <a href="mailto:chinonsodaniels2020@gmail.com">
-            Let’s find the signal. <DoodleArrow />
+            Start the Conversation. <DoodleArrow />
           </a>
           <div>
             <a href="https://github.com/Miss-nonso">GitHub</a>
@@ -400,7 +455,23 @@ export function MasteryPortfolio() {
             <a href="/Chinonso-Daniels-CV.txt" download>
               Download CV
             </a>
+            <a href="mailto:chinonsodaniels2020@gmail.com">
+              Book a conversation
+            </a>
           </div>
+          <footer className="mastery-footer">
+            <a
+              className="mastery-footer-mark"
+              href="#top"
+              aria-label="Back to top"
+            >
+              CD
+              <DoodleArrow />
+            </a>
+            <p>Build what people can depend on.</p>
+
+            <small>© 2026 CHINONSO DANIELS / LAGOS, NG</small>
+          </footer>
         </section>
       </main>
     </div>
