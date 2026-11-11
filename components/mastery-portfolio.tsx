@@ -294,7 +294,7 @@ export function MasteryPortfolio() {
               I take complicated product requirements and turn them into
               software people can pick up, trust, and use.
             </p>
-            <div className="hero-actions">
+            {/* <div className="hero-actions">
               <a className="hero-work-link" href="#work">
                 See selected work <span>↓</span>
               </a>
@@ -307,7 +307,7 @@ export function MasteryPortfolio() {
               <a className="hero-contact-link" href="#contact">
                 Start a conversation <DoodleArrow />
               </a>
-            </div>
+            </div> */}
           </div>
         </section>
         <SkillOrbit />
