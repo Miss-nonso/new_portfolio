@@ -15,6 +15,8 @@ import "./hero-copy-layout.css";
 import "./game-layout.css";
 import "./experience-approach.css";
 import "./copy-upgrade.css";
+import "./scroll-choreography.css";
+import "./scroll-cinema.css";
 
 export const metadata: Metadata = {
   title: {

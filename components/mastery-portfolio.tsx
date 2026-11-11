@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Lenis from "lenis";
 import { PlaygroundGames } from "@/components/playground-games";
 import { ScrollFootprints } from "@/components/scroll-footprints";
 import { SkillOrbit } from "@/components/skill-orbit";
@@ -130,6 +131,29 @@ export function MasteryPortfolio() {
   const [view, setView] = useState<"grid" | "orbit" | "carousel">("grid");
   const [carouselIndex, setCarouselIndex] = useState(0);
   useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const lenis = new Lenis({
+      duration: 1.18,
+      easing: (progress) => 1 - Math.pow(1 - progress, 4),
+      smoothWheel: true,
+      syncTouch: false,
+      wheelMultiplier: 0.92,
+      anchors: true,
+    });
+    let frame = 0;
+    const raf = (time: number) => {
+      lenis.raf(time);
+      frame = window.requestAnimationFrame(raf);
+    };
+    frame = window.requestAnimationFrame(raf);
+
+    return () => {
+      window.cancelAnimationFrame(frame);
+      lenis.destroy();
+    };
+  }, []);
+  useEffect(() => {
     const move = (event: PointerEvent) => {
       root.current?.style.setProperty("--mx", `${event.clientX}px`);
       root.current?.style.setProperty("--my", `${event.clientY}px`);
@@ -160,6 +184,50 @@ export function MasteryPortfolio() {
     return () => {
       window.removeEventListener("scroll", scroll);
       if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const candidates = Array.from(
+      root.current?.querySelectorAll<HTMLElement>(
+        [
+          ".skill-orbit-section",
+          ".fusion-work",
+          ".mastery-proof",
+          ".playroom",
+          ".mastery-contact",
+          ".skill-orbit-heading > *",
+          ".skill-segment",
+          ".fusion-project",
+          ".dream-stop",
+          ".game",
+          ".mastery-contact > *",
+        ].join(","),
+      ) ?? [],
+    );
+
+    candidates.forEach((element, index) => {
+      element.classList.add("scroll-reveal");
+      element.style.setProperty("--reveal-order", String(index % 5));
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle("is-in-view", entry.isIntersecting);
+        });
+      },
+      { rootMargin: "-8% 0px -8%", threshold: 0.08 },
+    );
+    candidates.forEach((element) => observer.observe(element));
+
+    return () => {
+      observer.disconnect();
+      candidates.forEach((element) => {
+        element.classList.remove("scroll-reveal", "is-in-view");
+        element.style.removeProperty("--reveal-order");
+      });
     };
   }, []);
   return (
@@ -227,7 +295,7 @@ export function MasteryPortfolio() {
               software people can pick up, trust, and use.
             </p>
             <div className="hero-actions">
-              <a href="#work">
+              <a className="hero-work-link" href="#work">
                 See selected work <span>↓</span>
               </a>
               <a
